@@ -1,0 +1,23 @@
+{% extends "base_app.html" %}
+
+{% block title %}
+    Отсортировать множественные поля
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block header %}
+    <div class="header">
+        <h2>Отсортировать множественные поля</h2>
+        <button onclick="document.location='{% url 'reload_start'%}'">Назад</button>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сортировать</button>
+    </form>
+{% endblock %}
