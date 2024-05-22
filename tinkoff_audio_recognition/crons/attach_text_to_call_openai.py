@@ -4,12 +4,12 @@ from settings import BASE_DIR
 from tinkoff_audio_recognition.funcs.get_token import get_bitrix_token
 
 from tinkoff_audio_recognition.models import ProcessingTime
-from tinkoff_audio_recognition.funcs.audio_recognition import get_text
+from tinkoff_audio_recognition.funcs.open_ai_stt import open_ai_get_text
 from tinkoff_audio_recognition.funcs.attach_transcription import attach_transcription
 from tinkoff_audio_recognition.funcs.add_file import add_file
 
 
-def attach_text_cron():
+def attach_text_cron_openai():
     """
     Крон-функция для получения всех звонков с записями,их последующей расшифровки и прикрепления расшифровки к звонку
     """
@@ -38,7 +38,7 @@ def attach_text_cron():
             status = add_file(but, activity, file_mp3_path)
             if status == 200:
                 # Преобразуем файл в текст
-                speech_to_text = get_text()
+                speech_to_text = open_ai_get_text()
                 if len(speech_to_text) > 0:
                     call_id = activity['ORIGIN_ID'][3:]
                     # Прикрепляем расшифровку к звонку

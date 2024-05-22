@@ -4,4 +4,7 @@ from settings import HOOK_TOKEN, APP_SETTINGS
 
 
 def get_bitrix_token():
+    """
+    Функция генерирует токен на основе вебхука
+    """
     return BitrixToken(APP_SETTINGS.portal_domain, web_hook_auth=HOOK_TOKEN)
