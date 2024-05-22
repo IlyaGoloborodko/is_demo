@@ -7,7 +7,7 @@ from tg_openai_bot.cron import handle_bot_updates
 
 
 def run_bot_thread():
-    while True:  # Needed cron func, while only in prod stage
+    while True:  # Needed crons func, while only in prod stage
         handle_bot_updates('tg_openai_bot.models.open_ai_bot.OpenAiBot')
 
 

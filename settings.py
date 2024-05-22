@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'autocomplete_crm_tasks',
     'move_tasks_deadline_js',
     "MyTest.apps.MytestConfig",
-    "field_list_sorting.apps.FieldListSortingConfig"
+    "field_list_sorting.apps.FieldListSortingConfig",
+    "tinkoff_audio_recognition.apps.TinkoffAudioRecognitionConfig"
 ]
 
 MIDDLEWARE = [

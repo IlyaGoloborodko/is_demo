@@ -14,6 +14,6 @@ def sort_companies_by_name(but, user_field):
 
     sorted_companies = sorted(comp_list, key=sort_key)
     for index, company in enumerate(sorted_companies):
-        company['SORT'] = index
+        company['SORT'] = index + 1
 
     but.call_list_method('crm.company.userfield.update', {'ID': field_id, 'FIELDS': {'LIST': sorted_companies}})
