@@ -49,6 +49,7 @@ urlpatterns = [
     path('move_tasks_deadline_js/', include('move_tasks_deadline_js.urls', 'move_tasks_deadline_js')),
     path('test_app/', include('MyTest.urls')),
     path('field_sorting/', include('field_list_sorting.urls')),
+    path('my_tg_bot/', include('my_tg_bot.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
